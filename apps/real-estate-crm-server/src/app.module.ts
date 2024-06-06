@@ -3,9 +3,15 @@ import { PropertyModule } from "./property/property.module";
 import { AppointmentModule } from "./appointment/appointment.module";
 import { ClientModule } from "./client/client.module";
 import { AgentAssignmentModule } from "./agentAssignment/agentAssignment.module";
+import { CustomerFeedbackModule } from "./CustomerFeedback/customerfeedback.module";
+import { HelpDeskAutomationModule } from "./HelpDeskAutomation/helpdeskautomation.module";
+import { MarketingAutomationModule } from "./MarketingAutomation/marketingautomation.module";
+import { ReportGenerationModule } from "./ReportGeneration/reportgeneration.module";
+import { SalesAutomationModule } from "./SalesAutomation/salesautomation.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
+import { KafkaModule } from "./kafka/kafka.module";
 import { ServeStaticModule } from "@nestjs/serve-static";
 import { ServeStaticOptionsService } from "./serveStaticOptions.service";
 import { ConfigModule, ConfigService } from "@nestjs/config";
@@ -15,10 +21,16 @@ import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
 @Module({
   controllers: [],
   imports: [
+    KafkaModule,
     PropertyModule,
     AppointmentModule,
     ClientModule,
     AgentAssignmentModule,
+    CustomerFeedbackModule,
+    HelpDeskAutomationModule,
+    MarketingAutomationModule,
+    ReportGenerationModule,
+    SalesAutomationModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,
